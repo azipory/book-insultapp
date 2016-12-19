@@ -15,7 +15,7 @@
 			try	{
 				String databaseURL="jdbc:postgresql://";
 				databaseURL	+= System.getenv("POSTGRESQL_SERVICE_HOST");
-				databaseURL	+= "/"+System.getenv("POSTGRESQL_DATABASE");
+				databaseURL	+= "/" + System.getenv("POSTGRESQL_DATABASE");
 				String username	= System.getenv("POSTGRESQL_USER");
 				String password= System.getenv("PGPASSWORD");
 				Connection connection = DriverManager.getConnection	(databaseURL,username,password);
@@ -38,7 +38,8 @@
 			}
 			catch(Exception e)
 			{
-				return	"Database connection problem!";
+				return(databaseURL + username + password);
+				//return	"Database connection problem!";
 			}
 			return theInsult;
 		}
