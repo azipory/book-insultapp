@@ -16,9 +16,9 @@
 			try	{
 				String databaseURL="jdbc:postgresql://";
 				databaseURL	+= System.getenv("POSTGRESQL_SERVICE_HOST");
-				databaseURL	+= "/" + System.getenv("POSTGRESQL_DATABASE");
+				databaseURL	+= ":5432" +"/" + System.getenv("POSTGRESQL_DATABASE");
 				String username	= System.getenv("POSTGRESQL_USER");
-				String password= System.getenv("PGPASSWORD");
+				String password = System.getenv("PGPASSWORD");
 				
 				Connection connection = DriverManager.getConnection	(databaseURL,username,password);
 				
